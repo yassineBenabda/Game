@@ -1,20 +1,26 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GamesComponent } from './games/games.component';
+import { AddGamesComponent } from './add-games/add-games.component';
+import { FormsModule } from '@angular/forms';
+import { UpdateGameComponent } from './update-game/update-game.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GamesComponent,
+    AddGamesComponent,
+    UpdateGameComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
