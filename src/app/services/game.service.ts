@@ -1,16 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Game } from '../model/game.model';
+import { Genre } from '../model/genre.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
   games : Game[];
+  genres : Genre[];
+
   constructor() {
+
+    this.genres = [
+      {idGenre : 1,nomGenre : "RPG"},
+      {idGenre : 2,nomGenre : "Fighting"},
+      {idGenre : 3,nomGenre : "Action"}
+    ];
     this.games = [
-      {idGame : 1, nomGame : "elden ring", prixGame : 60, dateCreation : new Date("06/14/2018")},
-      {idGame : 2, nomGame : "tekken", prixGame : 60 , dateCreation : new Date("01/17/2024")},
-      {idGame : 3, nomGame : "far cry", prixGame : 30 , dateCreation : new Date("05/1/2023")},
+      {idGame : 1, nomGame : "Elden Ring", prixGame : 39.99, datedeSortie : new Date("06/24/2022"),genre : {idGenre : 1,nomGenre : "RPG"}},
+      {idGame : 2, nomGame : "Tekken 7", prixGame : 24.99 , datedeSortie : new Date("01/01/2017"),genre : {idGenre : 2,nomGenre : "Fighting"}},
+      {idGame : 3, nomGame : "Far Cry 3", prixGame : 15.99 , datedeSortie : new Date("11/29/2012"),genre : {idGenre : 3,nomGenre : "Action"}}
     ];
    }
   listeGames():Game[] {
@@ -45,4 +54,11 @@ export class GameService {
     this.ajouterGame(g);
     this.trierGames();
   }
+  listeGenres(): Genre[] {
+    return this.genres;
+  }
+  consulterGenre(id:number): Genre{
+    return this.genres.find(genre => genre.idGenre == id)!;
+  }
 }
+  
