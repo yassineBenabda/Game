@@ -8,6 +8,7 @@ import { AddGamesComponent } from './add-games/add-games.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateGameComponent } from './update-game/update-game.component';
 import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-genre.component';
+import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-
     GamesComponent,
     AddGamesComponent,
     UpdateGameComponent,
-    RechercheParGenreComponent
+    RechercheParGenreComponent,
+    RechercheParNomComponent
   ],
   imports: [
     BrowserModule,

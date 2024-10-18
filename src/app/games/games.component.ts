@@ -9,7 +9,7 @@ import { GameService } from '../services/game.service';
 export class GamesComponent {
     games : Game[];
     constructor( private gameService : GameService ) { 
-      this.games = gameService.listeGames();
+      this.games = gameService.listeGame();
     }
     supprimerGame(g: Game){
       // console.log(g);

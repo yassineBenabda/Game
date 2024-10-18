@@ -23,7 +23,7 @@ export class GameService {
       {idGame : 3, nomGame : "Far Cry 3", prixGame : 15.99 , datedeSortie : new Date("11/29/2012"),genre : {idGenre : 3,nomGenre : "Action"}}
     ];
    }
-  listeGames():Game[] {
+  listeGame():Game[] {
     return this.games;
   }
   ajouterGame(g : Game){
@@ -73,5 +73,6 @@ export class GameService {
     
     return this.gamesRecherche;
     }
+    
 }
   

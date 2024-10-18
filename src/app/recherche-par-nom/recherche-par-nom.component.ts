@@ -4,31 +4,38 @@ import { Genre } from '../model/genre.model';
 import { GameService } from '../services/game.service';
 
 @Component({
-  selector: 'app-recherche-par-genre',
-  templateUrl: './recherche-par-genre.component.html'
+  selector: 'app-recherche-par-nom',
+  templateUrl: './recherche-par-nom.component.html'
 })
-export class RechercheParGenreComponent {
-
+export class RechercheParNomComponent {
   games! : Game[];
   genres! : Genre[];
   IdGenre! : number;
+  allGames! : Game[];
+  searchTerm!: string;
+  g!: Game;
+
 
   constructor( private gameService : GameService ) { }
 
   ngOnInit(): void {
-    this.genres = this.gameService.listeGenres();
-    this.games = [];
+    this.gameService.listeGame().subscribe(g => {
+      console.log(g);
+      this.allGames = g;
+    });
   }
+    
 
-  onChange() {
-    this.games = this.gameService.rechercherParGenre(this.IdGenre);
+  onKeyUp(filterText : string){
+    this.games = this.allGames.filter(item =>item.nomGame.toLowerCase().includes(filterText));
   }
-
-  supprimerGame(g: Game){
+  
+  /* supprimerGame(g: Game){
     let conf = confirm("Etes-vous sûr ?");
     if (conf){
       this.gameService.supprimerGame(g);
       this.games = this.gameService.rechercherParGenre(this.IdGenre);
     }
-  }
+  } */
+
 }
