@@ -7,13 +7,15 @@ import { GamesComponent } from './games/games.component';
 import { AddGamesComponent } from './add-games/add-games.component';
 import { FormsModule } from '@angular/forms';
 import { UpdateGameComponent } from './update-game/update-game.component';
+import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-genre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GamesComponent,
     AddGamesComponent,
-    UpdateGameComponent
+    UpdateGameComponent,
+    RechercheParGenreComponent
   ],
   imports: [
     BrowserModule,

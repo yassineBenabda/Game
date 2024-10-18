@@ -8,6 +8,7 @@ import { Genre } from '../model/genre.model';
 export class GameService {
   games : Game[];
   genres : Genre[];
+  gamesRecherche! : Game[];
 
   constructor() {
 
@@ -60,5 +61,17 @@ export class GameService {
   consulterGenre(id:number): Genre{
     return this.genres.find(genre => genre.idGenre == id)!;
   }
+  rechercherParGenre(idGenre: number): Game[]{
+    this.gamesRecherche = [];
+
+    this.games.forEach((cur, index) => {
+    if(idGenre == cur.genre.idGenre) {
+    console.log("cur "+cur);
+    this.gamesRecherche.push(cur);
+    }
+    });
+    
+    return this.gamesRecherche;
+    }
 }
   
