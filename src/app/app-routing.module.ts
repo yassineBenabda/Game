@@ -7,12 +7,12 @@ import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-
 import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
 
 const routes: Routes = [
-  {path : "games" , component : GamesComponent},
-  {path : "add-games" , component : AddGamesComponent},
-  {path : "updateGame/:id" , component : UpdateGameComponent},
-  {path : "rechercheParGenre", component : RechercheParGenreComponent},
-  {path: "rechercheParNom", component : RechercheParNomComponent},
-  {path : "" , redirectTo : "games" , pathMatch : "full"}
+  { path : "games" , component : GamesComponent },
+  { path : "add-games" , component : AddGamesComponent },
+  { path : "updateGame/:id" , component : UpdateGameComponent },
+  { path : "recherche-par-genre", component : RechercheParGenreComponent },
+  { path : "recherche-par-nom", component : RechercheParNomComponent },
+  { path : "" , redirectTo : "games" , pathMatch : "full" }
 ];
 
 @NgModule({

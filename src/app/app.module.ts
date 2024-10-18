@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { UpdateGameComponent } from './update-game/update-game.component';
 import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-genre.component';
 import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.
     AddGamesComponent,
     UpdateGameComponent,
     RechercheParGenreComponent,
-    RechercheParNomComponent
+    RechercheParNomComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,
